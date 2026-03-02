@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speak Tech - Sua Vaga Internacional Começa Aqui</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Poppins & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Ícones (Lucide Icons) -->
+    <script src="https://unpkg.com/lucide-react@latest/dist/lucide-react.js"></script>
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    
+    <style>
+        /* Estilos personalizados */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* Tema claro (slate-50) */
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #C026D3, #4F46E5); /* Magenta -> Indigo */
+            background-size: 200% 200%;
+            animation: gradient-animation 10s ease infinite;
+        }
+
+        @keyframes gradient-animation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .section-divider svg {
+            width: 100%;
+            height: 100px;
+        }
+
+        .shape-fill {
+            fill: #f8fafc; /* Cor de fundo da próxima seção */
+        }
+        
+        /* Estilo para a seta do FAQ abrir e fechar */
+        details[open] summary .details-arrow {
+            transform: rotate(180deg);
+        }
+        summary {
+            list-style: none; /* Remove a seta padrão do details */
+        }
+        summary::-webkit-details-marker {
+            display: none; /* Remove a seta padrão no Chrome/Safari */
+        }
+
+        /* Efeito de brilho atrás do vídeo */
+        .video-glow {
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            background: linear-gradient(45deg, #ef4444, #6366f1);
+            filter: blur(20px);
+            opacity: 0.4;
+            z-index: -1;
+            border-radius: 1.5rem;
+        }
+    </style>
+</head>
+<body class="text-slate-800">
+
+    <!-- ===== CABEÇALHO ===== -->
+    <header class="fixed top-0 left-0 w-full bg-white/80 backdrop-blur-lg z-50 border-b border-slate-200/50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="flex items-center text-2xl font-bold tracking-wider text-slate-900">
+                <img src="https://raw.githubusercontent.com/gerlonmagalhaes/mypersonalteacher/main/img/speaktech%20logo.jpg" alt="Speak Tech Logo" class="w-12 h-12 rounded-full mr-3 object-cover">
+                <span>Speak<span class="text-purple-500">Tech</span></span>
+            </a>
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#metodo" class="text-slate-600 hover:text-slate-900 transition-colors">O Método</a>
+                <a href="#depoimentos" class="text-slate-600 hover:text-slate-900 transition-colors">Depoimentos</a>
+                <a href="#faq" class="text-slate-600 hover:text-slate-900 transition-colors">FAQ</a>
+            </nav>
+            <a href="https://wa.me/5571920012811?text=Olá!%20Tenho%20interesse%20em%20trabalhar%20no%20exterior%20e%20gostaria%20de%20saber%20mais%20detalhes%20sobre%20como%20funciona%20a%20mentoria." target="_blank" class="hidden md:inline-block bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-6 rounded-full transition-transform hover:scale-105">
+                Agendar Sessão
+            </a>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- ===== SEÇÃO HERO ===== -->
+        <section class="gradient-bg pt-32 pb-20 relative overflow-hidden">
+            <div class="container mx-auto px-6 text-center">
+                <img src="https://raw.githubusercontent.com/gerlonmagalhaes/mypersonalteacher/main/img/speaktech%20logo.jpg" alt="Speak Tech Logo" class="w-40 h-40 mx-auto rounded-full mb-8 border-4 border-white/30 shadow-xl object-cover">
+                <h1 class="text-4xl md:text-6xl text-white font-extrabold leading-tight mb-4">
+                    Sua primeira vaga tech no exterior começa aqui.
+                </h1>
+                <p class="text-lg md:text-xl text-slate-200 max-w-3xl mx-auto mb-8">
+                    Mentoria completa para destravar seu inglês, otimizar seu perfil e conquistar o 'sim' das empresas globais.
+                </p>
+                <a href="https://wa.me/5571920012811?text=Olá!%20Tenho%20interesse%20em%20trabalhar%20no%20exterior%20e%20gostaria%20de%20saber%20mais%20detalhes%20sobre%20como%20funciona%20a%20mentoria." target="_blank" class="bg-red-500 hover:bg-red-600 text-white font-bold py-4 px-10 rounded-full text-lg inline-block shadow-lg hover:shadow-2xl transition-all hover:scale-105 transform">
+                    Quero minha vaga gringa!
+                </a>
+            </div>
+        </section>
+
+        <!-- ===== DIVISOR DE SEÇÃO ESTILIZADO ===== -->
+        <div class="section-divider bg-slate-50">
+            <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-17,148.6-13.49,206.9-6.74,73.2,8.45,148.6,16.48,212.1,33.26,63.5,16.78,124.3,35.82,185.5,49.55L1200,120V0H0V120Z" style="fill: #f8fafc;"></path>
+            </svg>
+        </div>
+
+        <!-- ===== SEÇÃO DE VÍDEO ===== -->
+        <section class="pb-16 pt-4 bg-slate-50">
+            <div class="container mx-auto px-6 max-w-5xl">
+                <div class="text-center mb-8">
+                    <span class="text-purple-600 font-semibold tracking-wide uppercase text-sm">Assista agora</span>
+                    <h2 class="text-3xl font-bold text-slate-800">Descubra como a Mentoria funciona</h2>
+                </div>
+                
+                <!-- Wrapper do Vídeo com Aspect Ratio e Glow -->
+                <div class="relative w-full max-w-4xl mx-auto">
+                    <!-- Efeito Glow atrás -->
+                    <div class="video-glow animate-pulse"></div>
+                    
+                    <!-- Container Responsivo 16:9 -->
+                    <div class="relative w-full" style="padding-bottom: 56.25%;">
+                        <iframe 
+                            class="absolute top-0 left-0 w-full h-full rounded-2xl shadow-2xl border-4 border-white"
+                            src="https://www.youtube.com/embed/SW_K_3kQOXA?si=oh91CfgngZozYRlB" 
+                            title="Apresentação Speak Tech" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            referrerpolicy="strict-origin-when-cross-origin" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="metodo" class="pb-20 bg-slate-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold mb-3 bg-gradient-to-r from-red-500 to-red-700 bg-clip-text text-transparent">O passo a passo para sua carreira internacional</h2>
+                    <p class="text-slate-600 max-w-2xl mx-auto">Desenvolvemos um método validado para te guiar em cada etapa do processo seletivo no exterior.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Card 1 -->
+                    <div class="bg-white p-8 rounded-2xl text-center flex flex-col items-center border border-slate-200 shadow-sm hover:shadow-lg transition-shadow transform hover:-translate-y-2">
+                        <div class="bg-indigo-100 text-indigo-500 p-4 rounded-full mb-4">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Análise de Perfil</h3>
+                        <p class="text-slate-500 text-sm">Diagnóstico completo de carreira e objetivos para criar um plano de ação 100% personalizado.</p>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="bg-white p-8 rounded-2xl text-center flex flex-col items-center border border-slate-200 shadow-sm hover:shadow-lg transition-shadow transform hover:-translate-y-2">
+                        <div class="bg-purple-100 text-purple-500 p-4 rounded-full mb-4">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">LinkedIn & CV de Impacto</h3>
+                        <p class="text-slate-500 text-sm">Construímos um perfil campeão, otimizado com as palavras-chave que recrutadores gringos procuram.</p>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="bg-white p-8 rounded-2xl text-center flex flex-col items-center border border-slate-200 shadow-sm hover:shadow-lg transition-shadow transform hover:-translate-y-2">
+                        <div class="bg-indigo-100 text-indigo-500 p-4 rounded-full mb-4">
+                             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Inglês para Entrevistas</h3>
+                        <p class="text-slate-500 text-sm">Foco total no vocabulário técnico e cultural, e nas respostas que te destacam dos outros candidatos.</p>
+                    </div>
+                    <!-- Card 4 -->
+                    <div class="bg-white p-8 rounded-2xl text-center flex flex-col items-center border border-slate-200 shadow-sm hover:shadow-lg transition-shadow transform hover:-translate-y-2">
+                        <div class="bg-purple-100 text-purple-500 p-4 rounded-full mb-4">
+                             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5Z"/></svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Simulações Práticas</h3>
+                        <p class="text-slate-500 text-sm">Entrevistas simuladas (behavioural e technical) com feedback detalhado para você chegar 100% confiante.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- SEÇÃO: O QUE A MENTORIA OFERECE -->
+        <section id="o-que-oferece" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold mb-3 bg-gradient-to-r from-red-500 to-red-700 bg-clip-text text-transparent">Um arsenal completo para sua aprovação</h2>
+                    <p class="text-slate-600 max-w-2xl mx-auto">Você terá acesso a tudo que precisa para se destacar e conquistar a vaga dos sonhos.</p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                    <!-- Item -->
+                    <div class="flex items-start space-x-4">
+                        <div class="text-indigo-500 mt-1 flex-shrink-0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></div>
+                        <div>
+                            <h3 class="font-semibold text-lg">Banco de vagas de vários países</h3>
+                            <p class="text-slate-500">Acesso a uma curadoria de vagas remotas e presenciais.</p>
+                        </div>
+                    </div>
+                    <!-- Item -->
+                    <div class="flex items-start space-x-4">
+                        <div class="text-indigo-500 mt-1 flex-shrink-0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></div>
+                        <div>
+                            <h3 class="font-semibold text-lg">Contatos de Recrutadores</h3>
+                            <p class="text-slate-500">Networking direcionado com recrutadores que buscam talentos no Brasil.</p>
+                        </div>
+                    </div>
+                    <!-- Item -->
+                    <div class="flex items-start space-x-4">
+                        <div class="text-indigo-500 mt-1 flex-shrink-0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></div>
+                        <div>
+                            <h3 class="font-semibold text-lg">Pack de vocabulário de inglês</h3>
+                            <p class="text-slate-500">Material focado no inglês técnico e corporativo para você se comunicar com confiança.</p>
+                        </div>
+                    </div>
+                    <!-- Item -->
+                    <div class="flex items-start space-x-4">
+                        <div class="text-indigo-500 mt-1 flex-shrink-0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></div>
+                        <div>
+                            <h3 class="font-semibold text-lg">Simulações individuais de entrevista</h3>
+                            <p class="text-slate-500">Sessões personalizadas para cada vaga que você aplicar.</p>
+                        </div>
+                    </div>
+                    <!-- Item -->
+                    <div class="flex items-start space-x-4">
+                        <div class="text-indigo-500 mt-1 flex-shrink-0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></div>
+                        <div>
+                            <h3 class="font-semibold text-lg">Orientações para CV e LinkedIn</h3>
+                            <p class="text-slate-500">Transforme seus perfis em uma máquina de atrair recrutadores.</p>
+                        </div>
+                    </div>
+                    <!-- Item -->
+                    <div class="flex items-start space-x-4">
+                        <div class="text-indigo-500 mt-1 flex-shrink-0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></div>
+                        <div>
+                            <h3 class="font-semibold text-lg">Acompanhamento semanal</h3>
+                            <p class="text-slate-500">Análise de desempenho e ajuste de estratégia para manter você no caminho certo.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO: PARA QUEM É A MENTORIA -->
+        <section id="para-quem" class="py-20 bg-slate-50">
+           <div class="container mx-auto px-6">
+               <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold mb-3 bg-gradient-to-r from-red-500 to-red-700 bg-clip-text text-transparent">Essa mentoria é para você?</h2>
+                    <p class="text-slate-600 max-w-2xl mx-auto">Se você se identifica com algum destes objetivos, a resposta é sim.</p>
+               </div>
+                <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    <!-- Item -->
+                    <div class="bg-white p-6 rounded-lg flex items-center space-x-4 border border-slate-200 shadow-sm">
+                        <div class="text-purple-500 flex-shrink-0"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 11 3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+                        <p class="text-slate-700">Pessoas que desejam <strong>trabalhar remoto</strong> ganhando em dólar ou outra moeda forte.</p>
+                    </div>
+                    <!-- Item -->
+                    <div class="bg-white p-6 rounded-lg flex items-center space-x-4 border border-slate-200 shadow-sm">
+                        <div class="text-purple-500 flex-shrink-0"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 11 3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+                        <p class="text-slate-700">Pessoas que desejam <strong>imigrar para outro país</strong> com um emprego garantido.</p>
+                    </div>
+                    <!-- Item -->
+                    <div class="bg-white p-6 rounded-lg flex items-center space-x-4 border border-slate-200 shadow-sm">
+                        <div class="text-purple-500 flex-shrink-0"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 11 3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+                        <p class="text-slate-700">Pessoas que desejam trabalhar em <strong>projetos internacionais</strong> no Brasil.</p>
+                    </div>
+                      <!-- Item -->
+                    <div class="bg-white p-6 rounded-lg flex items-center space-x-4 border border-slate-200 shadow-sm">
+                        <div class="text-purple-500 flex-shrink-0"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 11 3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+                        <p class="text-slate-700">Pessoas que querem ganhar <strong>renda extra em dólar</strong> com projetos pontuais.</p>
+                    </div>
+                </div>
+           </div>
+        </section>
+
+        <!-- SEÇÃO: CONHEÇA O MENTOR -->
+        <section id="mentor" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                     <h2 class="text-4xl font-bold mb-3 bg-gradient-to-r from-red-500 to-red-700 bg-clip-text text-transparent">Conheça seu Mentor</h2>
+                     <p class="text-slate-600 max-w-2xl mx-auto">Quem vai te guiar nessa jornada</p>
+                </div>
+                <div class="flex flex-col md:flex-row items-center justify-center gap-12 max-w-5xl mx-auto">
+                    <div class="md:w-1/3 flex-shrink-0">
+                        <!-- Imagem do Mentor -->
+                        <img src="https://raw.githubusercontent.com/gerlonmagalhaes/primeiravagainter/main/imagem_2025-10-03_100550836.png" alt="Foto de Gerlon Magalhães" class="w-64 h-64 rounded-full mx-auto shadow-lg border-4 border-white object-cover">
+                    </div>
+                    <div class="md:w-2/3 text-center md:text-left">
+                        <h3 class="text-3xl font-bold mb-2">Gerlon Magalhães</h3>
+                        <p class="text-indigo-500 font-semibold mb-4">Especialista em Carreira Internacional & Poliglota</p>
+                        <p class="text-slate-600 mb-4">Com anos de experiência no mercado de tecnologia e vivência internacional, Gerlon já ajudou dezenas de profissionais a superarem a barreira do idioma e conquistarem vagas em empresas globais. Sua metodologia foca em resultados práticos, combinando técnicas de comunicação com estratégias de carreira para o mercado tech.</p>
+                        <p class="text-slate-600">Ele entende exatamente os desafios que você enfrenta, pois já trilhou o mesmo caminho.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DEPOIMENTOS ATUALIZADOS -->
+        <section id="depoimentos" class="py-20 bg-slate-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold mb-3 bg-gradient-to-r from-red-500 to-red-700 bg-clip-text text-transparent">Quem já destravou a carreira internacional</h2>
+                    <p class="text-slate-600 max-w-2xl mx-auto">Histórias reais de profissionais que confiaram no nosso método.</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <!-- Depoimento 1: Acácio -->
+                    <div class="bg-white p-8 rounded-2xl flex flex-col border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                        <!-- Estrelas -->
+                        <div class="flex text-yellow-400 mb-4">
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        </div>
+                        
+                        <p class="text-slate-700 mb-6 flex-grow italic">
+                            "One of the best English teachers I've ever had. Fun, responsible. He knows how to break the ice when necessary and make classes suitable for those who work during the day and only have time to study at night. I highly recommend him. This teacher is extremely funny."
+                        </p>
+                        
+                        <div class="flex items-center">
+                            <img src="https://media.licdn.com/dms/image/v2/C4D03AQEsBlU8de4FqA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1610452634950?e=1772064000&v=beta&t=yGjef_F-meza4czBE50fkMU_gmo2_qZO7EhlvXAtKZM" alt="Foto de Acácio" class="w-12 h-12 rounded-full mr-4 border-2 border-indigo-400 object-cover">
+                            <div>
+                                <h4 class="font-bold text-slate-900">Acácio Leonardo Souza</h4>
+                                <span class="text-xs text-slate-500">Aluno</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Depoimento 2: Caique -->
+                    <div class="bg-white p-8 rounded-2xl flex flex-col border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                         <!-- Estrelas -->
+                         <div class="flex text-yellow-400 mb-4">
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        </div>
+
+                        <p class="text-slate-700 mb-6 flex-grow italic">
+                            "O melhor professor de idiomas existente!"
+                        </p>
+                        
+                        <div class="flex items-center">
+                            <img src="https://media.licdn.com/dms/image/v2/C4E03AQFkp_k1JTlQ5g/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1642434627818?e=1772064000&v=beta&t=qpUeSbSycJ8VzAJexpXbECmTtRAzorzsa9vD7kNpTBU" alt="Foto de Caique" class="w-12 h-12 rounded-full mr-4 border-2 border-purple-400 object-cover">
+                            <div>
+                                <h4 class="font-bold text-slate-900">Caique Brener</h4>
+                                <span class="text-xs text-slate-500">Aluno</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Depoimento 3: Jonas -->
+                    <div class="bg-white p-8 rounded-2xl flex flex-col border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                         <!-- Estrelas -->
+                         <div class="flex text-yellow-400 mb-4">
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        </div>
+
+                        <p class="text-slate-700 mb-6 flex-grow italic">
+                            "Compromisso real com o aprendizado e desenvolvimento. Recomendo a todos."
+                        </p>
+                        
+                        <div class="flex items-center">
+                            <img src="https://media.licdn.com/dms/image/v2/C4E03AQFwqkccm7oR_A/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1620840335997?e=1772064000&v=beta&t=_NI4p2tnNXzX1ACGdrhD9c_2s2rLtBKBRzNySYz1EE0" alt="Foto de Jonas" class="w-12 h-12 rounded-full mr-4 border-2 border-indigo-400 object-cover">
+                            <div>
+                                <h4 class="font-bold text-slate-900">Jonas Barbosa</h4>
+                                <span class="text-xs text-slate-500">Aluno</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+        
+        <!-- SEÇÃO FAQ -->
+        <section id="faq" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                 <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold mb-3 bg-gradient-to-r from-red-500 to-red-700 bg-clip-text text-transparent">Ainda tem dúvidas?</h2>
+                    <p class="text-slate-600 max-w-2xl mx-auto">Respostas para as perguntas mais comuns sobre a mentoria.</p>
+                </div>
+                <div class="max-w-3xl mx-auto space-y-4">
+                    <details class="bg-slate-50 border border-slate-200 rounded-lg p-6 cursor-pointer group">
+                        <summary class="font-semibold text-lg flex justify-between items-center">
+                            Para qual nível de profissional é a mentoria?
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 transition-transform transform details-arrow group-open:rotate-180"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </summary>
+                        <p class="mt-4 text-slate-600">A mentoria é ideal para profissionais de nível júnior, pleno ou sênior que desejam conquistar sua primeira oportunidade no exterior. Adaptamos o conteúdo para a sua realidade e seus objetivos.</p>
+                    </details>
+                    <details class="bg-slate-50 border border-slate-200 rounded-lg p-6 cursor-pointer group">
+                        <summary class="font-semibold text-lg flex justify-between items-center">
+                            Preciso ter inglês fluente para começar?
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 transition-transform transform details-arrow group-open:rotate-180"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </summary>
+                        <p class="mt-4 text-slate-600">Não. Você precisa ter um nível intermediário (B1/B2) de inglês, capaz de manter uma conversa. Nosso foco é refinar seu vocabulário técnico e prepará-lo especificamente para as entrevistas, não ensinar inglês do zero.</p>
+                    </details>
+                      <details class="bg-slate-50 border border-slate-200 rounded-lg p-6 cursor-pointer group">
+                        <summary class="font-semibold text-lg flex justify-between items-center">
+                            Quanto tempo dura a mentoria?
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 transition-transform transform details-arrow group-open:rotate-180"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </summary>
+                        <p class="mt-4 text-slate-600">O programa completo tem duração de 12 meses, com encontros quinzenais individuais. Além disso, você terá acesso ao nosso canal de suporte exclusivo durante todo o período para tirar dúvidas e receber feedbacks.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+        
+        <!-- REDIRECIONAMENTO PARA WHATSAPP -->
+        <section id="contato" class="relative py-20 gradient-bg overflow-hidden">
+             <div class="container mx-auto px-6 text-center relative z-10">
+                <h2 class="text-4xl text-white font-bold mb-4">Pronto para dar o próximo passo na sua carreira internacional?</h2>
+                <p class="text-slate-200 max-w-2xl mx-auto mb-8">
+                    Agende uma sessão estratégica gratuita e sem compromisso. Vamos entender seus objetivos e montar um plano de ação para você.
+                </p>
+                <a href="https://wa.me/5571920012811?text=Olá!%20Tenho%20interesse%20em%20trabalhar%20no%20exterior%20e%20gostaria%20de%20saber%20mais%20detalhes%20sobre%20como%20funciona%20a%20mentoria." target="_blank" class="bg-red-500 hover:bg-red-600 text-white font-bold py-4 px-10 rounded-full text-lg inline-block shadow-lg hover:shadow-2xl transition-all hover:scale-105 transform">
+                    Agendar minha sessão agora
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- ===== RODAPÉ ===== -->
+    <footer class="bg-white border-t border-slate-200 py-8">
+        <div class="container mx-auto px-6 text-center text-slate-500">
+            <div class="flex justify-center space-x-6 mb-4">
+                <!-- Instagram Icon -->
+                <a href="https://www.instagram.com/teacher.gerlon" target="_blank" class="text-slate-500 hover:text-purple-500 transition-colors" aria-label="Instagram">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                </a>
+                <!-- Linkedin Icon -->
+                <a href="https://www.linkedin.com/in/gerlonmagalhaes/?locale=en_US" target="_blank" class="text-slate-500 hover:text-purple-500 transition-colors" aria-label="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                </a>
+                <!-- Whatsapp Icon -->
+                <a href="https://wa.me/5571920012811?text=olá%2C%20quero%20saber%20mais%20da%20mentoria%20internacional" target="_blank" class="text-slate-500 hover:text-purple-500 transition-colors" aria-label="WhatsApp">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 16 16">
+                        <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
+                    </svg>
+                </a>
+            </div>
+            <p>&copy; 2025 Speak Tech. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
