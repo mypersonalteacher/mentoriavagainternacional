@@ -74,6 +74,15 @@
             z-index: -1;
             border-radius: 1.5rem;
         }
+        
+        /* Ocultar scrollbar no carrossel nativo mas manter funcionalidade */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
     </style>
 </head>
 <body class="text-slate-800">
@@ -150,6 +159,7 @@
             </div>
         </section>
 
+        <!-- SEÇÃO: MÉTODO -->
         <section id="metodo" class="pb-20 bg-slate-50">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16">
@@ -285,7 +295,7 @@
            </div>
         </section>
 
-        <!-- SEÇÃO: CONHEÇA O MENTOR -->
+        <!-- SEÇÃO: CONHEÇA O MENTOR (MANTIDA INTACTA) -->
         <section id="mentor" class="py-20 bg-white">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16">
@@ -307,88 +317,127 @@
             </div>
         </section>
 
-        <!-- DEPOIMENTOS ATUALIZADOS -->
-        <section id="depoimentos" class="py-20 bg-slate-50">
-            <div class="container mx-auto px-6">
+        <!-- NOVO CARROSSEL DE DEPOIMENTOS -->
+        <section id="depoimentos" class="py-20 bg-slate-50 relative overflow-hidden">
+            <div class="container mx-auto px-6 relative z-10">
+                
                 <div class="text-center mb-16">
                     <h2 class="text-4xl font-bold mb-3 bg-gradient-to-r from-red-500 to-red-700 bg-clip-text text-transparent">Quem já destravou a carreira internacional</h2>
                     <p class="text-slate-600 max-w-2xl mx-auto">Histórias reais de profissionais que confiaram no nosso método.</p>
                 </div>
                 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Área Principal do Carrossel -->
+                <div class="max-w-4xl mx-auto relative px-2 md:px-12 group">
                     
-                    <!-- Depoimento 1: Acácio -->
-                    <div class="bg-white p-8 rounded-2xl flex flex-col border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
-                        <!-- Estrelas -->
-                        <div class="flex text-yellow-400 mb-4">
-                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                        </div>
+                    <!-- Janela Visível -->
+                    <div class="overflow-hidden rounded-3xl pb-8 hide-scrollbar" id="test-window">
                         
-                        <p class="text-slate-700 mb-6 flex-grow italic">
-                            "One of the best English teachers I've ever had. Fun, responsible. He knows how to break the ice when necessary and make classes suitable for those who work during the day and only have time to study at night. I highly recommend him. This teacher is extremely funny."
-                        </p>
-                        
-                        <div class="flex items-center">
-                            <img src="https://media.licdn.com/dms/image/v2/C4D03AQEsBlU8de4FqA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1610452634950?e=1772064000&v=beta&t=yGjef_F-meza4czBE50fkMU_gmo2_qZO7EhlvXAtKZM" alt="Foto de Acácio" class="w-12 h-12 rounded-full mr-4 border-2 border-indigo-400 object-cover">
-                            <div>
-                                <h4 class="font-bold text-slate-900">Acácio Leonardo Souza</h4>
-                                <span class="text-xs text-slate-500">Aluno</span>
+                        <!-- Pista (Track) que desliza -->
+                        <div id="test-track" class="flex transition-transform duration-500 ease-in-out">
+                            
+                            <!-- Slide 1: Acácio -->
+                            <div class="w-full flex-shrink-0 px-2 md:px-4">
+                                <div class="bg-white p-8 md:p-12 rounded-3xl flex flex-col items-center text-center border border-slate-200 shadow-lg h-full">
+                                    <div class="flex text-yellow-400 mb-6 space-x-1">
+                                        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                                        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                                        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                                        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                                        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                                    </div>
+                                    <p class="text-slate-700 text-lg md:text-xl mb-8 italic font-medium leading-relaxed flex-grow">
+                                        "One of the best English teachers I've ever had. Fun, responsible. He knows how to break the ice when necessary and make classes suitable for those who work during the day and only have time to study at night. I highly recommend him. This teacher is extremely funny."
+                                    </p>
+                                    <div class="mt-auto">
+                                        <img src="img/Acacio.jfif" alt="Acácio" class="w-16 h-16 rounded-full mx-auto border-4 border-indigo-100 object-cover mb-3">
+                                        <h4 class="font-bold text-slate-900 text-lg">Acácio Leonardo Souza</h4>
+                                        <span class="text-xs font-semibold text-indigo-500 uppercase tracking-wide">Mentorado</span>
+                                    </div>
+                                </div>
                             </div>
+
+                            <!-- Slide 2: Caique -->
+                            <div class="w-full flex-shrink-0 px-2 md:px-4">
+                                <div class="bg-white p-8 md:p-12 rounded-3xl flex flex-col items-center text-center border border-slate-200 shadow-lg h-full">
+                                    <div class="flex text-yellow-400 mb-6 space-x-1">
+                                        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                                        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                                        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                                        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                                        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                                    </div>
+                                    <p class="text-slate-700 text-2xl md:text-3xl mb-8 italic font-medium leading-relaxed flex-grow flex items-center justify-center">
+                                        "O melhor professor de idiomas existente!"
+                                    </p>
+                                    <div class="mt-auto">
+                                        <img src="img/Caique.jfif" alt="Caique" class="w-16 h-16 rounded-full mx-auto border-4 border-indigo-100 object-cover mb-3">
+                                        <h4 class="font-bold text-slate-900 text-lg">Caique Brener</h4>
+                                        <span class="text-xs font-semibold text-indigo-500 uppercase tracking-wide">Mentorado</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Slide 3: Jonas -->
+                            <div class="w-full flex-shrink-0 px-2 md:px-4">
+                                <div class="bg-white p-8 md:p-12 rounded-3xl flex flex-col items-center text-center border border-slate-200 shadow-lg h-full">
+                                    <div class="flex text-yellow-400 mb-6 space-x-1">
+                                        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                                        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                                        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                                        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                                        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                                    </div>
+                                    <p class="text-slate-700 text-xl md:text-2xl mb-8 italic font-medium leading-relaxed flex-grow flex items-center justify-center">
+                                        "Compromisso real com o aprendizado e desenvolvimento. Recomendo a todos."
+                                    </p>
+                                    <div class="mt-auto">
+                                        <img src="img/Jonas.jfif" alt="Jonas" class="w-16 h-16 rounded-full mx-auto border-4 border-indigo-100 object-cover mb-3">
+                                        <h4 class="font-bold text-slate-900 text-lg">Jonas Barbosa</h4>
+                                        <span class="text-xs font-semibold text-indigo-500 uppercase tracking-wide">Mentorado</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Slide 4: Matheus Soares -->
+                            <div class="w-full flex-shrink-0 px-2 md:px-4">
+                                <div class="bg-white p-8 md:p-12 rounded-3xl flex flex-col items-center text-center border border-slate-200 shadow-lg h-full">
+                                    <div class="flex text-yellow-400 mb-6 space-x-1">
+                                        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                                        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                                        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                                        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                                        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                                    </div>
+                                    <p class="text-slate-700 text-lg md:text-xl mb-8 italic font-medium leading-relaxed flex-grow flex items-center justify-center">
+                                        "Excelente escola de inglês!! Se consigo ler, entender ao ouvir e me comunicar no inglês, sem me preocupar, com toda certeza é por conta da My Personal Teacher! Muito obrigado!"
+                                    </p>
+                                    <div class="mt-auto">
+                                        <img src="img/MS.jfif" alt="Matheus Soares" class="w-16 h-16 rounded-full mx-auto border-4 border-indigo-100 object-cover mb-3">
+                                        <h4 class="font-bold text-slate-900 text-lg">Matheus Soares</h4>
+                                        <span class="text-xs font-semibold text-indigo-500 uppercase tracking-wide">Mentorado</span>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
 
-                    <!-- Depoimento 2: Caique -->
-                    <div class="bg-white p-8 rounded-2xl flex flex-col border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
-                         <!-- Estrelas -->
-                         <div class="flex text-yellow-400 mb-4">
-                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                        </div>
-
-                        <p class="text-slate-700 mb-6 flex-grow italic">
-                            "O melhor professor de idiomas existente!"
-                        </p>
-                        
-                        <div class="flex items-center">
-                            <img src="https://media.licdn.com/dms/image/v2/C4E03AQFkp_k1JTlQ5g/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1642434627818?e=1772064000&v=beta&t=qpUeSbSycJ8VzAJexpXbECmTtRAzorzsa9vD7kNpTBU" alt="Foto de Caique" class="w-12 h-12 rounded-full mr-4 border-2 border-purple-400 object-cover">
-                            <div>
-                                <h4 class="font-bold text-slate-900">Caique Brener</h4>
-                                <span class="text-xs text-slate-500">Aluno</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Depoimento 3: Jonas -->
-                    <div class="bg-white p-8 rounded-2xl flex flex-col border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
-                         <!-- Estrelas -->
-                         <div class="flex text-yellow-400 mb-4">
-                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                        </div>
-
-                        <p class="text-slate-700 mb-6 flex-grow italic">
-                            "Compromisso real com o aprendizado e desenvolvimento. Recomendo a todos."
-                        </p>
-                        
-                        <div class="flex items-center">
-                            <img src="https://media.licdn.com/dms/image/v2/C4E03AQFwqkccm7oR_A/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1620840335997?e=1772064000&v=beta&t=_NI4p2tnNXzX1ACGdrhD9c_2s2rLtBKBRzNySYz1EE0" alt="Foto de Jonas" class="w-12 h-12 rounded-full mr-4 border-2 border-indigo-400 object-cover">
-                            <div>
-                                <h4 class="font-bold text-slate-900">Jonas Barbosa</h4>
-                                <span class="text-xs text-slate-500">Aluno</span>
-                            </div>
-                        </div>
-                    </div>
+                    <!-- Botões de Navegação Customizados -->
+                    <button type="button" id="prev-test" class="absolute top-1/2 -left-2 md:-left-6 -translate-y-1/2 z-20 flex items-center justify-center w-10 h-10 md:w-12 md:h-12 rounded-full bg-white shadow-lg border border-slate-100 text-indigo-500 hover:bg-indigo-50 hover:text-indigo-700 hover:scale-110 transition-all focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                    </button>
+                    <button type="button" id="next-test" class="absolute top-1/2 -right-2 md:-right-6 -translate-y-1/2 z-20 flex items-center justify-center w-10 h-10 md:w-12 md:h-12 rounded-full bg-white shadow-lg border border-slate-100 text-indigo-500 hover:bg-indigo-50 hover:text-indigo-700 hover:scale-110 transition-all focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </button>
                     
+                    <!-- Indicadores (Bolinhas) -->
+                    <div class="flex justify-center space-x-2 mt-6" id="test-indicators">
+                        <div class="w-3 h-3 rounded-full bg-indigo-500 transition-all"></div>
+                        <div class="w-3 h-3 rounded-full bg-slate-300 transition-all"></div>
+                        <div class="w-3 h-3 rounded-full bg-slate-300 transition-all"></div>
+                        <div class="w-3 h-3 rounded-full bg-slate-300 transition-all"></div>
+                    </div>
+
                 </div>
             </div>
         </section>
@@ -463,5 +512,46 @@
         </div>
     </footer>
 
+    <!-- Lógica do Carrossel de Depoimentos -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const track = document.getElementById('test-track');
+            const slides = track.children;
+            const prevBtn = document.getElementById('prev-test');
+            const nextBtn = document.getElementById('next-test');
+            const indicators = document.getElementById('test-indicators').children;
+            let index = 0;
+
+            function updateCarousel() {
+                // Move a pista
+                track.style.transform = `translateX(-${index * 100}%)`;
+                
+                // Atualiza as bolinhas de indicação
+                for(let i = 0; i < indicators.length; i++) {
+                    if(i === index) {
+                        indicators[i].classList.replace('bg-slate-300', 'bg-indigo-500');
+                    } else {
+                        indicators[i].classList.replace('bg-indigo-500', 'bg-slate-300');
+                    }
+                }
+            }
+
+            nextBtn.addEventListener('click', () => {
+                index = (index + 1) % slides.length;
+                updateCarousel();
+            });
+
+            prevBtn.addEventListener('click', () => {
+                index = (index - 1 + slides.length) % slides.length;
+                updateCarousel();
+            });
+            
+            // Faz o carrossel passar automaticamente a cada 6 segundos
+            setInterval(() => {
+                index = (index + 1) % slides.length;
+                updateCarousel();
+            }, 6000);
+        });
+    </script>
 </body>
 </html>
